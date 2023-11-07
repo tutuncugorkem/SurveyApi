@@ -1,4 +1,4 @@
-namespace Survey.Api
+namespace SurveyApi.Api
 {
     public class WeatherForecast
     {

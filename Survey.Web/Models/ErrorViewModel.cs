@@ -1,4 +1,4 @@
-namespace Survey.Web.Models
+namespace SurveyApi.Web.Models
 {
     public class ErrorViewModel
     {

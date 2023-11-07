@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Survey.Core
+namespace SurveyApi.Core
 {
     public class Survey:BaseEntity
     {

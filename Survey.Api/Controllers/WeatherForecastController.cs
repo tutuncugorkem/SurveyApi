@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Survey.Api.Controllers
+namespace SurveyApi.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

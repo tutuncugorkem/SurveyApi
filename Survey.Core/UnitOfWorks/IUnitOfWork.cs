@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Survey.Core.UnitOfWorks
+namespace SurveyApi.Core.UnitOfWorks
 {
     public interface IUnitOfWork
     {

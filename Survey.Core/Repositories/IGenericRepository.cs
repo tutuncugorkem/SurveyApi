@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Survey.Core.Repositories
+namespace SurveyApi.Core.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
