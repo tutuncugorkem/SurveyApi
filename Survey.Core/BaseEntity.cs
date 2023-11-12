@@ -12,7 +12,7 @@ namespace SurveyApi.Core
         public int Id { get; set; }
 
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }   //ilk data eklenirken null geleceği için nullable yaptık
 
         public bool IsActive { get; set; }
 
