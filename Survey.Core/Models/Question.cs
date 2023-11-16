@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SurveyApi.Core
+namespace SurveyApi.Core.Models
 {
-    public class Question:BaseEntity
+    public class Question : BaseEntity
     {
-        
+
         public string Title { get; set; }
         public int SortOrder { get; set; }
         public int SurveyId { get; set; }

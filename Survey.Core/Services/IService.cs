@@ -13,8 +13,8 @@ namespace SurveyApi.Core.Services
         Task<IEnumerable<T>> GetAllAsync(); //igenericrepository ile farklılık olsun diye örnek olması açısından yaptık burayı
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
-        Task AddAsync(T entity);
-        Task AddRangeAsync(IEnumerable<T> entities);
+        Task<T> AddAsync(T entity);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
         Task UpdateAsync(T entity);  //Iservicede bu değişiklikleri yansıtacağımız için void değil, artık burada TASK tipinde olmalı update remove ve removerange
         Task RemoveAsync(T entity);
         Task RemoveRangeAsync(IEnumerable<T> entities);

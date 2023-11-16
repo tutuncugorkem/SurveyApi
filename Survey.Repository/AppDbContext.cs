@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SurveyApi.Core;
+using SurveyApi.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

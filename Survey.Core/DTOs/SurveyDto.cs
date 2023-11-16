@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SurveyApi.Core
+namespace SurveyApi.Core.DTOs
 {
-    public class Survey:BaseEntity
+    public class SurveyDto : BaseDto
     {
         public string Name { get; set; }
-        public List<Question> Questions { get; set; }
+
     }
 }
