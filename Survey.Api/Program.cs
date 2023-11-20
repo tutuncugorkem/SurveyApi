@@ -5,6 +5,8 @@ using SurveyApi.Core.UnitOfWorks;
 using SurveyApi.Repository;
 using SurveyApi.Repository.Repositories;
 using SurveyApi.Repository.UnitOfWorks;
+using SurveyApi.Service.Mapping;
+using SurveyApi.Service.Services;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +20,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-//builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
