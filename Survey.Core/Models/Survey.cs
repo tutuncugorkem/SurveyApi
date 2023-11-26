@@ -9,6 +9,6 @@ namespace SurveyApi.Core.Models
     public class Survey : BaseEntity
     {
         public string Name { get; set; }
-        public List<Question> Questions { get; set; }
+        public Question Questions { get; set; }
     }
 }
