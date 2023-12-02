@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyApi.Repository;
 
@@ -11,9 +12,10 @@ using SurveyApi.Repository;
 namespace SurveyApi.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128103950_initialiki")]
+    partial class initialiki
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,9 +38,6 @@ namespace SurveyApi.Repository.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -48,26 +47,21 @@ namespace SurveyApi.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QuestionId")
-                        .IsUnique();
-
                     b.ToTable("Answers");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7693),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(4756),
                             IsActive = true,
-                            QuestionId = 1,
                             Text = "Evet"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7706),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(4768),
                             IsActive = true,
-                            QuestionId = 2,
                             Text = "Ederim"
                         });
                 });
@@ -109,7 +103,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7905),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(4914),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 1,
@@ -118,7 +112,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7908),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(4916),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 2,
@@ -155,28 +149,17 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8020),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(5063),
                             IsActive = true,
                             Name = "Magaza Degerlendirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8022),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 39, 49, 862, DateTimeKind.Local).AddTicks(5064),
                             IsActive = true,
                             Name = "Teknik Servis Degerlendirme"
                         });
-                });
-
-            modelBuilder.Entity("SurveyApi.Core.Models.Answer", b =>
-                {
-                    b.HasOne("SurveyApi.Core.Models.Question", "Question")
-                        .WithOne("Answer")
-                        .HasForeignKey("SurveyApi.Core.Models.Answer", "QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("SurveyApi.Core.Models.Question", b =>
@@ -188,12 +171,6 @@ namespace SurveyApi.Repository.Migrations
                         .IsRequired();
 
                     b.Navigation("Survey");
-                });
-
-            modelBuilder.Entity("SurveyApi.Core.Models.Question", b =>
-                {
-                    b.Navigation("Answer")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("SurveyApi.Core.Models.Survey", b =>

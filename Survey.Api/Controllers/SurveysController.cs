@@ -14,12 +14,23 @@ namespace SurveyApi.Api.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IService<Survey> _service;
-
-        public SurveysController(IMapper mapper, IService<Survey> service)
+        private readonly ISurveyService _surveyService;
+        public SurveysController(IMapper mapper, IService<Survey> service, ISurveyService surveyService)
         {
             _mapper = mapper;
             _service = service;
+            _surveyService = surveyService;
         }
+
+        //karışmasın get'ler diye;
+        //GET api/surveys/getsurveydetails
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetSurveyDetail()
+        {
+            return CreateActionResult(await _surveyService.GetSurveyDetails());
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> All()
         {

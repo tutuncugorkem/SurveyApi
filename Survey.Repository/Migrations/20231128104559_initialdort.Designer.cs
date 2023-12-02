@@ -12,8 +12,8 @@ using SurveyApi.Repository;
 namespace SurveyApi.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231112112255_initial")]
-    partial class initial
+    [Migration("20231128104559_initialdort")]
+    partial class initialdort
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace SurveyApi.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SurveyApi.Core.Answer", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Answer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 448, DateTimeKind.Local).AddTicks(9882),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7693),
                             IsActive = true,
                             QuestionId = 1,
                             Text = "Evet"
@@ -67,14 +67,14 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 448, DateTimeKind.Local).AddTicks(9893),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7706),
                             IsActive = true,
                             QuestionId = 2,
                             Text = "Ederim"
                         });
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Question", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Question", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -111,7 +111,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 449, DateTimeKind.Local).AddTicks(63),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7905),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 1,
@@ -120,7 +120,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 449, DateTimeKind.Local).AddTicks(65),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7908),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 2,
@@ -128,7 +128,7 @@ namespace SurveyApi.Repository.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Survey", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Survey", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -157,33 +157,33 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 449, DateTimeKind.Local).AddTicks(143),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8020),
                             IsActive = true,
                             Name = "Magaza Degerlendirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 12, 14, 22, 55, 449, DateTimeKind.Local).AddTicks(144),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8022),
                             IsActive = true,
                             Name = "Teknik Servis Degerlendirme"
                         });
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Answer", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Answer", b =>
                 {
-                    b.HasOne("SurveyApi.Core.Question", "Question")
+                    b.HasOne("SurveyApi.Core.Models.Question", "Question")
                         .WithOne("Answer")
-                        .HasForeignKey("SurveyApi.Core.Answer", "QuestionId")
+                        .HasForeignKey("SurveyApi.Core.Models.Answer", "QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Question");
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Question", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Question", b =>
                 {
-                    b.HasOne("SurveyApi.Core.Survey", "Survey")
+                    b.HasOne("SurveyApi.Core.Models.Survey", "Survey")
                         .WithMany("Questions")
                         .HasForeignKey("SurveyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -192,13 +192,13 @@ namespace SurveyApi.Repository.Migrations
                     b.Navigation("Survey");
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Question", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Question", b =>
                 {
                     b.Navigation("Answer")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SurveyApi.Core.Survey", b =>
+            modelBuilder.Entity("SurveyApi.Core.Models.Survey", b =>
                 {
                     b.Navigation("Questions");
                 });

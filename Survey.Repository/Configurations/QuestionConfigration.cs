@@ -18,7 +18,7 @@ namespace SurveyApi.Repository.Configurations
             builder.Property(x=>x.Id).UseIdentityColumn();
             builder.Property(x => x.Title).IsRequired();
 
-            builder.HasOne(x=>x.Survey).WithMany(x => x.Questions).HasForeignKey(x=>x.SurveyId);
+            builder.HasOne(x => x.Survey).WithMany(x => x.Questions);
         }
     }
 }

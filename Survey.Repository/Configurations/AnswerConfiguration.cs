@@ -17,7 +17,7 @@ namespace SurveyApi.Repository.Configurations
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Text).IsRequired();
 
-            builder.HasOne(x => x.Question).WithOne(x => x.Answer).HasForeignKey<Answer>(x => x.QuestionId); //burada 1 soru 1 cevap ılıskısı var, şıklı soru yok ozaman. sor
+            builder.HasOne(x => x.Question).WithOne(x => x.Answer).HasForeignKey<Answer>(x => x.QuestionId); //burada 1 soru 1 cevap ılıskısı var
         }
     }
 }

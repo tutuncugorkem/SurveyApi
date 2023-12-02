@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyApi.Repository;
 
@@ -11,9 +12,10 @@ using SurveyApi.Repository;
 namespace SurveyApi.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128104210_initialucuncu")]
+    partial class initialucuncu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,7 +59,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7693),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2354),
                             IsActive = true,
                             QuestionId = 1,
                             Text = "Evet"
@@ -65,7 +67,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7706),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2366),
                             IsActive = true,
                             QuestionId = 2,
                             Text = "Ederim"
@@ -109,7 +111,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7905),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2590),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 1,
@@ -118,7 +120,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7908),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2592),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 2,
@@ -155,14 +157,14 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8020),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2709),
                             IsActive = true,
                             Name = "Magaza Degerlendirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8022),
+                            CreatedDate = new DateTime(2023, 11, 28, 13, 42, 10, 593, DateTimeKind.Local).AddTicks(2710),
                             IsActive = true,
                             Name = "Teknik Servis Degerlendirme"
                         });

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SurveyApi.Core.DTOs
 {
-    public class SurveyDto : BaseDto
+    public class SurveyDetailDto : BaseDto
     {
         public string Name { get; set; }
-        
+        public ICollection<QuestionDto> Questions { get; set; }
     }
 }

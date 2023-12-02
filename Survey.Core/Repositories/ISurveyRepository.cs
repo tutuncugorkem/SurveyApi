@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SurveyApi.Core.DTOs
+namespace SurveyApi.Core.Repositories
 {
-    public class SurveyDto : BaseDto
+    public interface ISurveyRepository : IGenericRepository<Survey>
     {
-        public string Name { get; set; }
-        
+        Task<List<Survey>> GetSurveyDetails();
     }
 }
