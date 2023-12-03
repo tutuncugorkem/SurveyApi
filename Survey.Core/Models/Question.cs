@@ -16,5 +16,7 @@ namespace SurveyApi.Core.Models
         public Survey Survey { get; set; }
         public Answer Answer { get; set; }
 
+
+
     }
 }

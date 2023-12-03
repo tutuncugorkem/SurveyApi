@@ -57,7 +57,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7693),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8453),
                             IsActive = true,
                             QuestionId = 1,
                             Text = "Evet"
@@ -65,7 +65,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7706),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8464),
                             IsActive = true,
                             QuestionId = 2,
                             Text = "Ederim"
@@ -109,7 +109,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7905),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8598),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 1,
@@ -118,7 +118,7 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(7908),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8599),
                             IsActive = true,
                             SortOrder = 1,
                             SurveyId = 2,
@@ -155,14 +155,14 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8020),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8712),
                             IsActive = true,
                             Name = "Magaza Degerlendirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 11, 28, 13, 45, 58, 992, DateTimeKind.Local).AddTicks(8022),
+                            CreatedDate = new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8713),
                             IsActive = true,
                             Name = "Teknik Servis Degerlendirme"
                         });

@@ -5,21 +5,21 @@ using SurveyApi.Core.DTOs;
 using SurveyApi.Core.Models;
 using SurveyApi.Core.Services;
 using SurveyApi.Service.Mapping;
+using SurveyApi.Service.Services;
 
 namespace SurveyApi.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+
     public class SurveysController : CustomBaseController
     {
         private readonly IMapper _mapper;
-        private readonly IService<Survey> _service;
-        private readonly ISurveyService _surveyService;
-        public SurveysController(IMapper mapper, IService<Survey> service, ISurveyService surveyService)
+        private readonly ISurveyService _service;
+        
+        public SurveysController(IMapper mapper, ISurveyService service)
         {
             _mapper = mapper;
             _service = service;
-            _surveyService = surveyService;
+            
         }
 
         //karışmasın get'ler diye;
@@ -27,7 +27,7 @@ namespace SurveyApi.Api.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetSurveyDetail()
         {
-            return CreateActionResult(await _surveyService.GetSurveyDetails());
+            return CreateActionResult(await _service.GetSurveyDetails());
         }
 
 

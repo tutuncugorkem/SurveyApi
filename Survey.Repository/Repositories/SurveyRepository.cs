@@ -18,7 +18,9 @@ namespace SurveyApi.Repository.Repositories
         public async Task<List<Survey>> GetSurveyDetails()
         {
             //eager loading, datayı cekerken bılgılerı alma
-            return await _context.Surveys.Include(x=> x.Questions).ToListAsync();
+            return await _context.Surveys.Include(x=> x.Questions)
+                            .ThenInclude(a=>a.Answer)
+                .ToListAsync();
         }
     }
 }

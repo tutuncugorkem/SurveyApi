@@ -8,9 +8,16 @@ namespace SurveyApi.Core.Models
 {
     public class Answer : BaseEntity
     {
-        public int QuestionId { get; set; }
+        
         public string Text { get; set; }
 
         public Question Question { get; set; }
+
+
+        public int QuestionId { get; set; }
+
+
+
+
     }
 }

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Survey.Core\SurveyApi.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

@@ -4,10 +4,12 @@ using SurveyApi.Core.DTOs;
 
 namespace SurveyApi.Api.Controllers
 {
-    
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class CustomBaseController : ControllerBase
     {
-
+        
         [NonAction]
         public IActionResult CreateActionResult<T>(CustomResponseDto<T> response)
         {

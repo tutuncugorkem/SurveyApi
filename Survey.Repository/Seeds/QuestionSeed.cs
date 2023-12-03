@@ -22,6 +22,7 @@ namespace SurveyApi.Repository.Seeds
                 Title = "Memnun kaldınız mı?",
                 IsActive = true,
                 CreatedDate = DateTime.Now
+              
             },
             new Question
             {

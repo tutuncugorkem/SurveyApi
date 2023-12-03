@@ -11,5 +11,9 @@ namespace SurveyApi.Core.DTOs
         public string Title { get; set; }
         public int SortOrder { get; set; }
         public int SurveyId { get; set; }
+
+        public AnswerDto Answer { get; set; }
+
+
     }
 }

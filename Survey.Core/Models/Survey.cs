@@ -11,5 +11,13 @@ namespace SurveyApi.Core.Models
     {
         public string Name { get; set; }
         public ICollection<Question> Questions { get; set; }
+
+      
+
+
+
+
+
+
     }
 }
