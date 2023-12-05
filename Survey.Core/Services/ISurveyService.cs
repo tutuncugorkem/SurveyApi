@@ -12,5 +12,9 @@ namespace SurveyApi.Core.Services
     {
         Task<CustomResponseDto<List<SurveyDetailDto>>> GetSurveyDetails();
 
+        Task<CustomResponseDto<List<SurveyDetailDto>>> GetSurveyDetailsById(int id);
+        Task<CustomResponseDto<List<SurveyDetailDto>>> UpdateSurveyDetailsById(SurveyDetailDto entity,int id);
+
+
     }
 }

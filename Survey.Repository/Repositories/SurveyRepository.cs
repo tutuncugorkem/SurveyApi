@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SurveyApi.Core.DTOs;
 using SurveyApi.Core.Models;
 using SurveyApi.Core.Repositories;
 using System;
@@ -22,5 +23,17 @@ namespace SurveyApi.Repository.Repositories
                             .ThenInclude(a=>a.Answer)
                 .ToListAsync();
         }
+
+       
+        public async Task<List<Survey>> GetSurveyDetailsById(int surveyId)
+        {
+            return await _context.Surveys.Include(x => x.Questions).ThenInclude(a=>a.Answer).Where(x=>x.Id==surveyId).ToListAsync();
+        }
+
+        public async Task<List<Survey>> UpdateSurveyDetailsById(SurveyDetailDto entity,int id)
+        {
+            return await _context.Surveys.Include(x => x.Questions).ThenInclude(a => a.Answer).Where(x => x.Id == id).ToListAsync();
+
+        }//genel bı update edemıyorum. buradan devam bu kod update  edemıyor 6 aralık gece 2.19
     }
 }

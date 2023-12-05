@@ -11,5 +11,6 @@ namespace SurveyApi.Core.DTOs
     {
         public string Name { get; set; }
         
+              
     }
 }

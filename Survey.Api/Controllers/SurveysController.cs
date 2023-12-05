@@ -30,6 +30,21 @@ namespace SurveyApi.Api.Controllers
             return CreateActionResult(await _service.GetSurveyDetails());
         }
 
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetSurveyDetailById(int id)
+        {
+            return CreateActionResult(await _service.GetSurveyDetailsById(id));
+        }
+
+
+        [HttpPut("[action]/{id}")]
+        public async Task<IActionResult> UpdateSurveyDetailById(SurveyDetailDto surveyDto, int id)
+        {
+
+            return CreateActionResult(await _service.UpdateSurveyDetailsById(surveyDto, id));
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> All()
