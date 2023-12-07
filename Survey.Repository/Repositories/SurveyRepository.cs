@@ -30,10 +30,6 @@ namespace SurveyApi.Repository.Repositories
             return await _context.Surveys.Include(x => x.Questions).ThenInclude(a=>a.Answer).Where(x=>x.Id==surveyId).ToListAsync();
         }
 
-        public async Task<List<Survey>> UpdateSurveyDetailsById(SurveyDetailDto entity,int id)
-        {
-            return await _context.Surveys.Include(x => x.Questions).ThenInclude(a => a.Answer).Where(x => x.Id == id).ToListAsync();
-
-        }//genel bı update edemıyorum. buradan devam bu kod update  edemıyor 6 aralık gece 2.19
+       
     }
 }

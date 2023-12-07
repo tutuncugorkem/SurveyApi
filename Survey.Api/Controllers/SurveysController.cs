@@ -37,13 +37,6 @@ namespace SurveyApi.Api.Controllers
         }
 
 
-        [HttpPut("[action]/{id}")]
-        public async Task<IActionResult> UpdateSurveyDetailById(SurveyDetailDto surveyDto, int id)
-        {
-
-            return CreateActionResult(await _service.UpdateSurveyDetailsById(surveyDto, id));
-        }
-
 
 
         [HttpGet]

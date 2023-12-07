@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace SurveyApi.Core.DTOs
 {
-    public class AnswerDto : BaseDto
+    public class AnswerUpdateDto
     {
-        
         public string Text { get; set; }
 
         public int QuestionId { get; set; }
 
+        public int Id { get; set; }
+
+        public bool IsActive { get; set; }
 
 
     }

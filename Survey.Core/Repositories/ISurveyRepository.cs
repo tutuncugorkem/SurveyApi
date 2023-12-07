@@ -14,7 +14,7 @@ namespace SurveyApi.Core.Repositories
 
         Task<List<Survey>> GetSurveyDetailsById(int id);
 
-        Task<List<Survey>> UpdateSurveyDetailsById(SurveyDetailDto entity, int id);
+       
 
 
     }

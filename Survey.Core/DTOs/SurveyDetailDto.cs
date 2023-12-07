@@ -10,7 +10,7 @@ namespace SurveyApi.Core.DTOs
     public class SurveyDetailDto : BaseDto
     {
         public string Name { get; set; }
-        public ICollection<QuestionDto> Questions { get; set; }
+        public ICollection<QuestionDetailDto> Questions { get; set; }
 
         
 

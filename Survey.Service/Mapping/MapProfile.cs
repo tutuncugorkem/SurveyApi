@@ -18,6 +18,12 @@ namespace SurveyApi.Service.Mapping
             CreateMap<Answer, AnswerDto>().ReverseMap();
             CreateMap<SurveyUpdateDto, Survey>();
             CreateMap<Survey, SurveyDetailDto>(); //survey', surveydto ya cevır
+            CreateMap<Question, QuestionDetailDto>();
+            CreateMap<QuestionUpdateDto, Question>();
+            CreateMap<QuestionDtoWOid, Question>().ReverseMap();
+            CreateMap<AnswerUpdateDto, Answer>();
+            CreateMap<AnswerDtoWOid, Answer>().ReverseMap();
+
         }
     }
 }

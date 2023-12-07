@@ -42,16 +42,7 @@ namespace SurveyApi.Service.Services
             return CustomResponseDto<List<SurveyDetailDto>>.Success(200, surveyDtoId);
         }
 
-        public async Task<CustomResponseDto<List<SurveyDetailDto>>> UpdateSurveyDetailsById(SurveyDetailDto entity,int id)
-        {
-           //repository-uow-await service
-           var survey= await _surveyRepository.UpdateSurveyDetailsById(entity,id);
-            var surveyDto = _mapper.Map<List<SurveyDetailDto>>(survey);
-            await _unitOfWork.CommitAsync();
-           return CustomResponseDto<List<SurveyDetailDto>>.Success(200, surveyDto);
-
-
-        }
+   
 
     }
 }
