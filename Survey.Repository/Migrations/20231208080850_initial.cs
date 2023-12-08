@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SurveyApi.Repository.Migrations
 {
-    public partial class intial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -75,32 +75,32 @@ namespace SurveyApi.Repository.Migrations
             migrationBuilder.InsertData(
                 table: "Surveys",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "Name", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8712), true, "Magaza Degerlendirme", null });
+                values: new object[] { 1, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1895), true, "Magaza Degerlendirme", null });
 
             migrationBuilder.InsertData(
                 table: "Surveys",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "Name", "UpdatedDate" },
-                values: new object[] { 2, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8713), true, "Teknik Servis Degerlendirme", null });
+                values: new object[] { 2, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1896), true, "Teknik Servis Degerlendirme", null });
 
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "SortOrder", "SurveyId", "Title", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8598), true, 1, 1, "Memnun kaldınız mı?", null });
+                values: new object[] { 1, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1824), true, 1, 1, "Memnun kaldınız mı?", null });
 
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "SortOrder", "SurveyId", "Title", "UpdatedDate" },
-                values: new object[] { 2, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8599), true, 1, 2, "Bizi tavsiye eder misiniz?", null });
+                values: new object[] { 2, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1825), true, 1, 2, "Bizi tavsiye eder misiniz?", null });
 
             migrationBuilder.InsertData(
                 table: "Answers",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "QuestionId", "Text", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8453), true, 1, "Evet", null });
+                values: new object[] { 1, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1646), true, 1, "Evet", null });
 
             migrationBuilder.InsertData(
                 table: "Answers",
                 columns: new[] { "Id", "CreatedDate", "IsActive", "QuestionId", "Text", "UpdatedDate" },
-                values: new object[] { 2, new DateTime(2023, 12, 3, 23, 47, 32, 129, DateTimeKind.Local).AddTicks(8464), true, 2, "Ederim", null });
+                values: new object[] { 2, new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1657), true, 2, "Ederim", null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Answers_QuestionId",

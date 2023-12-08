@@ -21,7 +21,7 @@ namespace SurveyApi.Api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetQuestionDetail()
         {
             return CreateActionResult(await _service.GetQuestionDetails());

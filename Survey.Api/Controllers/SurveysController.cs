@@ -55,11 +55,11 @@ namespace SurveyApi.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save(SurveyDto surveyDto)
+        public async Task<IActionResult> Save(SurveyDtoWOid surveyDto)
         {
             var survey = await _service.AddAsync(_mapper.Map<Survey>(surveyDto));
-            var surveysDto = _mapper.Map<SurveyDto>(survey);
-            return CreateActionResult(CustomResponseDto<SurveyDto>.Success(201, surveyDto));
+            var surveysDto = _mapper.Map<SurveyDtoWOid>(survey);
+            return CreateActionResult(CustomResponseDto<SurveyDtoWOid>.Success(201, surveyDto));
 
         }
 
