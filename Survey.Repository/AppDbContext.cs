@@ -17,6 +17,7 @@ namespace SurveyApi.Repository
            
         }
 
+     
         //her entitye dbset oluşturmak lazım
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<Question> Questions { get; set; }
@@ -25,6 +26,7 @@ namespace SurveyApi.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); //tum konfları okusun..
+            
             base.OnModelCreating(modelBuilder);
         }
 

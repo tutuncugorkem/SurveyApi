@@ -17,14 +17,14 @@ namespace SurveyApi.Repository.Seeds
             {
                 Id = 1,
                 Name = "Magaza Degerlendirme",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
             },
             new Survey
             {
                 Id = 2,
                 Name = "Teknik Servis Degerlendirme",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
             });
         }

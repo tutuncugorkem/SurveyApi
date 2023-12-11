@@ -12,7 +12,7 @@ using SurveyApi.Repository;
 namespace SurveyApi.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231208080850_initial")]
+    [Migration("20231211211809_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace SurveyApi.Repository.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<int>("QuestionId")
@@ -59,16 +59,16 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1646),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9004),
+                            IsDeleted = false,
                             QuestionId = 1,
                             Text = "Evet"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1657),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9019),
+                            IsDeleted = false,
                             QuestionId = 2,
                             Text = "Ederim"
                         });
@@ -85,7 +85,7 @@ namespace SurveyApi.Repository.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<int>("SortOrder")
@@ -111,8 +111,8 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1824),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9153),
+                            IsDeleted = false,
                             SortOrder = 1,
                             SurveyId = 1,
                             Title = "Memnun kaldınız mı?"
@@ -120,8 +120,8 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1825),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9154),
+                            IsDeleted = false,
                             SortOrder = 1,
                             SurveyId = 2,
                             Title = "Bizi tavsiye eder misiniz?"
@@ -139,7 +139,7 @@ namespace SurveyApi.Repository.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -157,15 +157,15 @@ namespace SurveyApi.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1895),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9222),
+                            IsDeleted = false,
                             Name = "Magaza Degerlendirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 8, 11, 8, 50, 618, DateTimeKind.Local).AddTicks(1896),
-                            IsActive = true,
+                            CreatedDate = new DateTime(2023, 12, 12, 0, 18, 9, 107, DateTimeKind.Local).AddTicks(9223),
+                            IsDeleted = false,
                             Name = "Teknik Servis Degerlendirme"
                         });
                 });

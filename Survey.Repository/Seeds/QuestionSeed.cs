@@ -20,7 +20,7 @@ namespace SurveyApi.Repository.Seeds
                 SurveyId = 1,
                 SortOrder = 1,
                 Title = "Memnun kaldınız mı?",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
               
             },
@@ -30,7 +30,7 @@ namespace SurveyApi.Repository.Seeds
                 SurveyId = 2,
                 SortOrder = 1,
                 Title = "Bizi tavsiye eder misiniz?",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
             });
         }

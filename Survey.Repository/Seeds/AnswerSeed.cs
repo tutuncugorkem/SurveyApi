@@ -18,7 +18,7 @@ namespace SurveyApi.Repository.Seeds
                 Id = 1,
                 QuestionId = 1,
                 Text = "Evet",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
             },
             new Answer
@@ -26,7 +26,7 @@ namespace SurveyApi.Repository.Seeds
                 Id = 2,
                 QuestionId = 2,
                 Text = "Ederim",
-                IsActive = true,
+                IsDeleted = false,
                 CreatedDate = DateTime.Now
             });
         }

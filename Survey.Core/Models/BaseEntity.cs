@@ -14,7 +14,7 @@ namespace SurveyApi.Core.Models
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }   //ilk data eklenirken null geleceği için nullable yaptık
 
-        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 }
