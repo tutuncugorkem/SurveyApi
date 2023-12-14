@@ -1,4 +1,8 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SurveyApi.Api.Filters;
 using SurveyApi.Core.Repositories;
 using SurveyApi.Core.Services;
 using SurveyApi.Core.UnitOfWorks;
@@ -7,13 +11,21 @@ using SurveyApi.Repository.Repositories;
 using SurveyApi.Repository.UnitOfWorks;
 using SurveyApi.Service.Mapping;
 using SurveyApi.Service.Services;
+using SurveyApi.Service.Validations;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//filter'ý buraya ekledik
+builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilterAttribute())).AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<AnswerDtoPostValidator>()).AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<QuestionDtoPostValidator>())
+    .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<SurveyDtoPostValidator>());
+//api nin kendisinin döndüðü modeli kapatacaðýz ki bizim filterdaki model dönsün hatada:
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
