@@ -57,6 +57,7 @@ namespace SurveyApi.Api.Controllers
         public async Task<IActionResult> DeleteAnswer(int id)
         {
             var answer = await _service.GetByIdAsync(id);
+            answer.IsDeleted = true;
             await _service.RemoveAsync(answer);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
 
