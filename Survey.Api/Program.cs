@@ -2,6 +2,8 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+using Serilog.Core;
 using SurveyApi.Api.Filters;
 using SurveyApi.Api.Middlewares;
 using SurveyApi.Core.Repositories;
@@ -13,6 +15,7 @@ using SurveyApi.Repository.UnitOfWorks;
 using SurveyApi.Service.Mapping;
 using SurveyApi.Service.Services;
 using SurveyApi.Service.Validations;
+using System.Collections.ObjectModel;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +42,16 @@ builder.Services.AddScoped<ISurveyRepository,SurveyRepository>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
+//serilog configurations
+Logger log = new LoggerConfiguration()
+    .WriteTo.File("logs/log.txt")
+    /*.WriteTo.MSSqlServer(builder.Configuration.GetConnectionString("SqlConnection"), "logs", autoCreateSqlTable: true, 
+    columnOptions: new Dictionary<string, ColumnWriterBase>)*/
+    
+    .CreateLogger();
+//serilog must be added
+builder.Host.UseSerilog(log);
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
