@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SurveyApi.Api.Filters;
+using SurveyApi.Api.Middlewares;
 using SurveyApi.Core.Repositories;
 using SurveyApi.Core.Services;
 using SurveyApi.Core.UnitOfWorks;
@@ -57,6 +58,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCustomException();
 
 app.UseAuthorization();
 

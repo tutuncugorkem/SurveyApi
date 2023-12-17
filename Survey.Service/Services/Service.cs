@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using SurveyApi.Core.Repositories;
 using SurveyApi.Core.Services;
 using SurveyApi.Core.UnitOfWorks;
+using SurveyApi.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,12 @@ namespace SurveyApi.Service.Services
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            var hasProduct = await _repository.GetByIdAsync(id);
+            if(hasProduct == null)
+            {
+                throw new NotFoundException($"{typeof(T).Name}({id}) does not exist");
+            }
+             return hasProduct;
         }
 
         public async Task RemoveAsync(T entity)
